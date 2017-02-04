@@ -9,9 +9,34 @@ import java.util.Scanner;
  */
 public class ZadaniaZeScannerem {
     public static void main(String[] args) {
-        System.out.println("Grade system 2000 z.o.o");
-        double avg = avgOfGrades();
-        System.out.println("Avg of your grades is: " + avg);
+//        System.out.println("Grade system 2000 z.o.o");
+//        double avg = avgOfGrades();
+//        System.out.println("Avg of your grades is: " + avg);
+        calculator();
+    }
+
+    public static void calculator(){
+        System.out.println("1. Dodawanie");
+        System.out.println("2. Odejmowanie");
+        System.out.println("3. Mnożenie");
+        System.out.println("4. Dzielenie");
+        int decision = getNumberFromUser("Podaj rodzaj operacji");
+        if(decision <0 || decision > 4){
+            System.out.println("Wrong data");
+        }
+        int firstNumber = getNumberFromUser("Wpisz pierwsza liczbe: ");
+        int secondNumber = getNumberFromUser("Wpisz druga liczbe: ");
+        if (decision == 1){
+            System.out.println(firstNumber+secondNumber);;
+        } else if (decision == 2){
+            System.out.println(firstNumber-secondNumber);
+        }
+        else if (decision == 3){
+            System.out.println(firstNumber*secondNumber);
+        }
+        else if (decision == 4){
+            System.out.println(firstNumber/secondNumber);
+        }
     }
 
     public static double avgOfGrades() {
