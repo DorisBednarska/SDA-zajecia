@@ -1,5 +1,7 @@
 package zajecia;
 
+import java.util.Scanner;
+
 /**
  * Created by RENT on 2017-02-04.
  */
@@ -8,13 +10,16 @@ public class Zajecia4 {
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8};
         statistics(array);
     }
+
     //checkAge();
     //isEven();
     //celsiustofahrenheit();
     //showArray1();
     //showArray2();
 //        oddArray();
-//    }
+//
+    //scannerExample();
+//}
 
     public static void checkAge() {
         int age = 5;
@@ -118,6 +123,15 @@ public class Zajecia4 {
         } else {
             System.out.println("ta liczba NIE JEST przysta");
         }
+    }
+    public static void scannerExample(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please insert your name:");
+        String name = scanner.nextLine();
+        System.out.println("Please insert your last name:");
+        String lastName = scanner.nextLine();
+
+        System.out.println("Your name is " + name + " " + lastName);
     }
 
 }
