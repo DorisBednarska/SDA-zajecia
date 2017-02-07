@@ -10,9 +10,32 @@ public class Wtorek {
     public static void main(String[] args) {
 //        int numberOfElements = avgUntil(4);
 //        System.out.println("Podano " + numberOfElements + " liczb.");
-        calculator();
+        //calculator();
+        System.out.println("Zakodowane: ");
+        String codded = cezarCode("Bednarska");
+        System.out.println(codded);
+        System.out.println("Odkodowanie: ");
+        System.out.println(decodecezarCode(codded, 2));
+    }
+    public static String cezarCode(String message){
+        return cezarCode(message, 1);
     }
 
+    public static String cezarCode(String message, int key) {
+        char[] charArray = message.toCharArray();
+        for (int i = 0; i < charArray.length; i++) {
+            charArray[i] = (char) (charArray[i] + key);
+        }
+        return String.valueOf(charArray);
+    }
+
+    public static String decodecezarCode(String codedMessage){
+        return cezarCode(codedMessage, -1);
+    }
+
+    public static String decodecezarCode(String codedMessage, int key) {
+        return cezarCode(codedMessage, -key);
+    }
     public static int sumUntil(int sum) {
         int tmpSum = 0;
         int counter = 0;
@@ -61,18 +84,18 @@ public class Wtorek {
             }
             switch (nrDzialania) {
                 case 1:
-                    System.out.println(firstNumber + " + " + secondNumber + " = " + (firstNumber+secondNumber));
+                    System.out.println(firstNumber + " + " + secondNumber + " = " + (firstNumber + secondNumber));
                     break;
                 case 2:
-                    System.out.println(firstNumber + " - " + secondNumber + " = " + (firstNumber-secondNumber));
+                    System.out.println(firstNumber + " - " + secondNumber + " = " + (firstNumber - secondNumber));
                     break;
                 case 3:
-                    System.out.println(firstNumber + " * " + secondNumber + " = " + (firstNumber*secondNumber));
+                    System.out.println(firstNumber + " * " + secondNumber + " = " + (firstNumber * secondNumber));
                     break;
                 case 4:
-                    if (secondNumber == 0){
+                    if (secondNumber == 0) {
                         System.out.println("Nie dziel przez 0!");
-                    }else {
+                    } else {
                         System.out.println(firstNumber + " / " + secondNumber + " = " + (firstNumber / secondNumber));
                     }
                     break;
