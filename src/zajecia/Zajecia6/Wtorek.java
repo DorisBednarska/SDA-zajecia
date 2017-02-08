@@ -15,7 +15,7 @@ public class Wtorek {
         String codded = cezarCode("Bednarska");
         System.out.println(codded);
         System.out.println("Odkodowanie: ");
-        System.out.println(decodecezarCode(codded, 2));
+        System.out.println(decodecezarCode(codded));
     }
     public static String cezarCode(String message){
         return cezarCode(message, 1);
