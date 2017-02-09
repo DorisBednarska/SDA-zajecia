@@ -16,8 +16,10 @@ public class Sroda {
 //        String rvs = isPalindrome("Ala ma kota");
 //        System.out.println(rvs);
 //        System.out.println(isPalindrome("kajak"));
-        int sum = sumFromString("Ala ma 2 koty i 3 psy");
-        System.out.println("Ala ma " + sum + " zwierzat");
+//        int sum = sumFromString("Ala ma 2 koty i 3 psy");
+//        System.out.println("Ala ma " + sum + " zwierzat");
+        boolean check = checkRoundBraces("(2+3)");
+        System.out.println(check);
     }
 
     public static int[] stringStatistics(String message) {
@@ -119,5 +121,21 @@ public class Sroda {
             }
         }
         return wynik;
+    }
+
+    public static boolean checkRoundBraces(String message) {
+        char[] charArray = message.toCharArray();
+        int counter = 0;
+        for (int i = 0; i < charArray.length; i++) {
+            if (charArray[i] == '(') {
+                counter++;
+            } else if (charArray[i] == ')') {
+                counter--;
+                if (counter < 0) {
+                    return false;
+                }
+            }
+        }
+        return counter == 0;
     }
 }
