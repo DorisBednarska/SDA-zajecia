@@ -16,7 +16,12 @@ public class Czwartek {
 //        System.out.println(fibonacciNumberRec(48));
 //        System.out.println(switchCaseWithBuilder("DorisB"));
 //        System.out.println(sumOfNumberDigitsWithString(345));
-        System.out.println(startsWith3("Ala ma kota", "Ala"));
+//        System.out.println(startsWith3("Ala ma kota", "Ala"));
+        String[] strings = split2("Ala ma kota");
+        for (int i = 0; i < strings.length ; i++) {
+            System.out.println(strings[i]);
+        }
+
 
     }
 
@@ -133,10 +138,31 @@ public class Czwartek {
     }
 
 
-//    public static String[] words(String message){
-//        for (int i = 0; i < charArray.length(); i++) {
-//
-//        }
-//    }
+    public static String[] split(String message){
+        return message.split(" ");
+    }
+
+    public static String[] split2(String message){
+        String[] strings = new String[100];
+        int i = 0;
+        boolean flag = true;
+        int tmp = 0;
+        while (flag){
+            int indexOfSpace = message.indexOf(' ', tmp);
+            String substring;
+            if (indexOfSpace == -1){
+                substring = message.substring(tmp);
+            } else{
+                substring = message.substring(tmp, indexOfSpace);
+            }
+            tmp = indexOfSpace + 1;
+            strings[i]= substring;
+            i++;
+            if (indexOfSpace == -1){
+                flag = false;
+            }
+        }
+        return null;
+    }
 
 }
